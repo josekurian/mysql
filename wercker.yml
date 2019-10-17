@@ -15,7 +15,7 @@ build:
             image-name: my-new-image
             cmd: 0.0.0.0 8080
             working-dir: $WERCKER_ROOT
-            tag: latest
+            tag: ${WERCKER_GIT_COMMIT}
             ports: "8080"
             username: $DOCKER_USERNAME
             password: $DOCKER_PASSWORD
