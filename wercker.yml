@@ -9,7 +9,7 @@ build:
 # Take our tested application revision and its dependencies, bake it in to a
     # Docker image, and push to OCIR.
     - internal/docker-push:
-            entrypoint: 8.0/
+            entrypoint: 8.0/docker-entrypoint.sh
             cmd: 0.0.0.0 8080
             working-dir: $WERCKER_ROOT
             tag: $WERCKER_GIT_COMMIT
