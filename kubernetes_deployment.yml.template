@@ -19,11 +19,11 @@ spec:
       containers: 
         - 
           image: "${DOCKER_REPO}:${WERCKER_GIT_COMMIT}"
-          name: mysql-server-pod
+          name: mysql-srv-pod
           ports: 
             - 
               containerPort: 8080
-              name: mysql-server-pod
+              name: mysql-srv-pod
               protocol: TCP
       imagePullSecrets: 
         - 
