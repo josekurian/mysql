@@ -8,11 +8,14 @@ build:
 
 # Take our tested application revision and its dependencies, bake it in to a
     # Docker image, and push to OCIR.
+    - internal/docker-build: 
+        dockerfile: 8.0/Dockerfile 
+        image-name: my-new-image
     - internal/docker-push:
-            entrypoint: 8.0/docker-entrypoint.sh
+            image-name: my-new-image
             cmd: 0.0.0.0 8080
             working-dir: $WERCKER_ROOT
-            tag: $WERCKER_GIT_COMMIT
+            tag: latest
             ports: "8080"
             username: $DOCKER_USERNAME
             password: $DOCKER_PASSWORD
