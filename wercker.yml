@@ -5,11 +5,8 @@ build:
     # Check that our application's tests are passing. Since this is a python
     # application, our entry script will also install the application's dependencies
     # with Virtualenv
-    - script:
-        name: Nose tests
-        code: bin/tests
 
-        # Take our tested application revision and its dependencies, bake it in to a
+# Take our tested application revision and its dependencies, bake it in to a
     # Docker image, and push to OCIR.
     - internal/docker-push:
             entrypoint: 8.0/
